@@ -1,0 +1,91 @@
+{% extends "base.html.twig" %}
+    
+{% block block1 %}
+
+{% if not logged %}
+{% if not app.user %}
+  {{ render(controller(
+    'App\\Controller\\ApliController::register', {'encoder' : encoder, 'request' : request}
+  )) }}
+{% endif %}
+{% endif %}
+{% if authRequired %}
+  {{ render(controller(
+    'App\\Controller\\ApliController::login', {'request' : request, 'authenticationUtils' : authenticationUtils}
+  )) }}
+{% endif %}
+{% if app.user %}
+{# <div class="parentPhoto"> #}
+  
+  {% for photo in photos %}
+      <div class="cadrePhoto1">
+                {% autoescape false %}
+            {{photo.photo1}}
+            {% endautoescape %}
+            </div>
+            <div class="cadrePhoto2">
+                {% autoescape false %}
+                {{photo.photo2}}
+                {% endautoescape %}
+            </div>
+            <div class="cadrePhoto3">
+                {% autoescape false %}
+                {{photo.photo3}}
+                {% endautoescape %}
+            </div>
+            {% endfor %}
+          {# </div> #}
+{% endif %}
+
+{% endblock %}
+
+
+{% block block2 %}
+
+
+    <div class="craie">
+        {% autoescape false %}
+        {{titre}}
+        {% endautoescape %}
+    </div>
+    
+    <div class="craie">
+
+            {% autoescape false %}
+            {{description}}
+            {% endautoescape %}
+    </div>
+{% endblock %}
+
+    {% block block3 %}
+     {#Bloc Plats Dispo et PhotoDeco mode ecran large#}
+     <div id="cadre-platdispoEtPhoto">
+           
+        <h3>
+        Plats Disponibles!
+        </h3>
+   <div id="nbDispo">
+     {#Affichage dinamyque du nombre de plats dispo#}
+     {% block block4 %}
+     {{ render(controller(
+      'app\\Controller\\ApliController::affichageNbPlat',
+      {}
+    )) }}
+     {% endblock %}
+   
+    </div> 
+   <img class="palmier img-fluid " src="/img/cloitre.jpg">
+  </img>
+</div>
+    {% endblock %}
+
+    {% block block5 %}
+
+      {% if app.user %}
+        {{ render(controller(
+          'app\\Controller\\ApliController::reserv',
+          {'request' : request, 'manager' : manager, }
+        )) }}
+      {% endif %}
+      
+    {% endblock %}

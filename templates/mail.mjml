@@ -1,0 +1,21 @@
+<mjml>
+  <mj-body background-color="#fffdfd">
+    <mj-section>
+      <mj-column>
+        <mj-image width="100px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSFn8mkcgg8PA4q32ocCwEFGQ64hJd8WOfH6zcy5wzPxea4uKnmQ&s" padding-top="50px"></mj-image>
+        <mj-text font-size="25px" color="#93b024" align="center" padding-bottom="30px" padding-top="30px" font-weight="bold">Les Jardins du cloître</mj-text>
+        <mj-divider border-color="#93b024"></mj-divider>
+        <mj-text font-size="20px" color="black" font-family="roboto" align="center">Cliquez sur le bouton pour réanitialiser le mot de passe :</mj-text>
+        <mj-text padding="30px"></mj-text>
+        <mj-button background-color="green" href="http://127.0.0.1:8000/reset_password/c1SaM7LK7fKzwIBHdBpAiTetgf8Inuw2fv9cvx1l2V4" font-family="roboto" align="center" font-size="18px" font-weight="bold">Cliquez ici</mj-button>
+        <mj-text font-size="19px" color="black" font-weight="bold" font-family="roboto" align="center" padding="50px">Réseaux sociaux</mj-text>
+        <mj-image width="100px" src="../public/icon/instagram.svg" padding-top="0px">Instagram</mj-image>
+        <mj-image width="100px" src="../public/icon/facebook.svg" padding-top="30px">Facebook</mj-image>
+        <mj-divider border-color="#93b024" padding-top="40px"></mj-divider>
+        <mj-image align="center" width="100px" height="75px" src=""></mj-image>
+        <mj-text font-size="19px" color="black" font-weight="bold" font-family="roboto" align="center" padding="40px">Adresse</mj-text>
+        <mj-text font-size="18px" color="black" font-weight="bold" font-family="roboto" align="center" padding="20px">20 Boulevard Madeleine Rémusat 13013 Marseille</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

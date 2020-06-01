@@ -1,0 +1,37 @@
+<mjml>
+  <mj-body>
+      <mj-column width="66.66666666666666%" vertical-align="middle">
+      </mj-column>
+      <mj-column width="33.33333333333333%" vertical-align="middle">
+        
+      </mj-column>
+    <mj-section background-color="#93b024" full-width="full-width">
+      <mj-column width="33.33333333333333%" vertical-align="middle">
+      </mj-column>
+      <mj-column width="66.66666666666666%" vertical-align="middle">
+        <mj-text align="right" padding-bottom="0px" padding-top="10px" font-family="roboto" font-weight="bold" font-size="17px"><a href="/" style="color: white;">Réserver</a>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;
+          <a href="/" style="text-decoration: none; color: inherit;">Se désabonner</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-image src="https://lesjardinsducloitredemars.fr/wp-content/uploads/2019/06/accueil-restaurant-du-cloitre-de-marseille.jpg" full-width="full-width"></mj-image>
+      <mj-column width="100%" vertical-align="middle">
+        <mj-text align="center" font-size="14px" color="#45474e" padding-bottom="10px" padding-top="45px"><span style="font-size: 30px; line-height: 30px;"></span><br/><br/><span style="color: #e85034"></span></mj-text>
+      </mj-column>
+    <mj-section background-color="#241f1f" background-url="https://www.transparenttextures.com/patterns/snow.png" vertical-align="middle" full-width="full-width"> 
+      <mj-column width="100%" vertical-align="middle" >
+        <mj-text align="center" color="#ffffff" font-size="18px" padding-bottom="10px"></mj-text>
+        <mj-text height="350px" color="#f8d5d1" padding-bottom="25px"></mj-text>
+      </mj-column>
+    </mj-section>
+      <mj-column width="50%" vertical-align="middle">
+      </mj-column>
+      <mj-column width="50%" vertical-align="middle">
+      </mj-column>
+    </mj-section>
+    <mj-section full-width="full-width">
+      <mj-column width="100%" vertical-align="middle">
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

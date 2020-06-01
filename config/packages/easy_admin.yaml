@@ -1,0 +1,74 @@
+easy_admin:
+    site_name: 'Pannel Admistrateur "Les Jardins du cloître"'
+    design:
+        form_theme:
+            - '@EasyAdmin/form/bootstrap_4.html.twig'
+            - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+        brand_color: '#93b024'
+        menu:
+            - { label: 'Homepage', url: '/' }
+            - { entity: 'Commande' }
+            - { entity: 'User' }
+            - { entity: 'Menu' }
+            - { entity: 'Newsletter'}
+            - { entity: 'Photo'}
+      
+    entities:
+       Commande:
+        class: App\Entity\Commande
+  
+       User:
+        class: App\Entity\User
+        controller: App\Controller\AdminController
+        form:
+            fields:
+            - { property: 'name'}
+            - { property: 'lastName'}
+            - { property: 'phone'}
+            - { property: 'mail'}
+            - { property: 'password',type: 'password'}
+            - { property: 'confirmPassword',type: 'password'}
+            - { property: 'newsletter',type: 'checkbox'}
+            # - { property: 'roles'}
+            - {property: 'roles',
+                    type: 'choice',
+                    type_options: {
+                        mapped: true,
+                        expanded: true,
+                        multiple: true,
+                        choices: { 'Utilisateur': 'ROLE_USER', 'Administrateur': 'ROLE_ADMIN' } } }
+                                    
+           
+           
+
+       Menu:
+        class: App\Entity\Menu
+        label: 'Menu' 
+        form :
+          fields:
+            - { property: 'title',type: 'fos_ckeditor', label: 'titre'}
+            - { property: 'description', type: 'fos_ckeditor', label: 'Description' }
+            - { property: 'date', type: 'date', label: 'Date' }
+            - { property: 'nbPlat', type: 'integer', label: 'Nb de plats'}
+        
+       Photo:
+        class: App\Entity\Photo
+        list:
+            fields: ['id', 'photo1', 'photo2', 'photo3' ]
+        label: 'Photo des Plats'
+        form:
+            fields:
+                - { property: photo1, type: 'fos_ckeditor', label: 'Photo Entrée'}
+                - { property: photo2, type: 'fos_ckeditor', label: 'Photo Plat chaud'}
+                - { property: photo3, type: 'fos_ckeditor', label: 'Photo Dessert'}
+                - { property: Menu, type: 'entity', type_option: {class: 'App\Entity\Menu'}}
+
+       Newsletter:
+        class: App\Entity\Newsletter
+        label: 'Newsletter'
+        form:
+            fields:
+                - { property: 'titre', type: 'fos_ckeditor', label: 'Titre'}
+                - { property: 'description', type: 'fos_ckeditor', label: 'Description'}
+                - { property: 'menu', type: 'easyadmin_autocomplete', type_options: { class: 'App\Entity\Menu' }}         
+                - { property: 'date', type: 'date', label: 'Date' }

@@ -1,0 +1,27 @@
+ {% if forceRefresh %}
+    <script type="text/javascript">
+    	window.location = window.location.href;
+    </script>
+{% endif %} 
+{% if menuDuJour == 2 %}
+{% if nbPlatDispo == 1 %}
+	<div class="reservation">
+		<h4 class="test">Passer une commande:</h4>
+		<hr>
+		<form action="http://127.0.0.1:8000/" method="post">
+
+			
+			<!-- <p class="testestest">Nombre de commandes à passer:</p> -->
+			<input id="boutonCommande" type="number" name="title" min="1">
+			<button  id ="reservation" type="submit">Réserver</button>
+		</form>
+	</div>
+
+{% endif %}
+{% endif %}
+
+{% if nbPlatDispo == -1 %}
+
+	<p>Plus de plats disponible</p>
+
+{% endif %}

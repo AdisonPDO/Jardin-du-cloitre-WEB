@@ -1,0 +1,338 @@
+/*box-sizing: border-box sert à coller les div les unes autres sans margin */
+body{
+    box-sizing: border-box;
+   margin:0;
+   background: rgb(221, 215, 215);  
+}
+
+.row{
+    margin: 0;
+}
+
+
+h3,h1{
+    color: white;
+    text-align: center;
+    margin-top: 3%;
+    font-size: 3.7vw;
+    
+}
+
+.mb-3{
+    margin-top: 4%;
+}
+
+/* scrollbar forme et couleur de fond */
+html::-webkit-scrollbar {
+    width: 1rem;
+    background-color: #241f1f!important ;
+    background-image: url("https://www.transparenttextures.com/patterns/snow.png");
+  }
+
+  html::-webkit-scrollbar-thumb {
+      background: #93b024; 
+      height: 10px;
+  }
+
+  /* scrollbar*/
+  html {
+    scrollbar-color: #000 rgba(0,0,0,.15);
+    scrollbar-width: thin;
+  }
+
+.container-fluid{
+    padding: 0;
+}
+/* Surchage Propriété nav bar BootsWatch*/
+.navbar-brand{
+    font-size: 1.39375rem;
+}
+
+.navbar-toggler{
+    font-size: 1.5375rem;
+}
+
+.navbar{
+    padding: 0.9em 2rem;
+}
+
+.nav-link{
+    font-size: 14px !important;
+}
+
+.bg-primary {
+    background-color: #241f1f!important ;
+    background-image: url("https://www.transparenttextures.com/patterns/snow.png");
+}
+
+
+/*affichage cadre gauche en mode Grd Ecran*/
+.cadre-form{    
+    border: solid 2px;
+    border-color: white;
+    min-height: auto;
+    background-color: #241f1f!important ;
+    background-image: url("https://www.transparenttextures.com/patterns/snow.png");
+    text-align: center;
+    color: white;
+    overflow: auto;
+}
+
+/*encadrement vert plats dispo et bouton de passage de commande en mode Tel et Tablette*/
+#boutonPasserCommande-Tel{
+    display: flex;
+    width: 60%;
+    height: 80%;
+    margin: auto;
+    background-color: #93b024;
+    border-radius: 5px;
+}
+
+#cadre-nb{
+    display: flex;
+    width: 78%;
+    height: 80%;
+    margin: auto;
+}
+
+#affichageNbPlat {
+    color: white;
+    font-size: 30px;
+    margin: auto;
+}
+
+/*Propriété du texte enfant des cadres verts et bouton de L'affichage Mode Tel et Tablette*/
+#nbPlat-Dispo {
+    color: #fffdfd;
+    margin: auto;
+    text-align: center;
+    font-size: 3.5vw;
+    letter-spacing: .2rem;
+    font-weight: bold;
+    display: flex;
+}
+
+/*propriété du bouton lien de redirection passer commande!*/ 
+#passCommande {
+    color: #241f1f;
+    margin: auto;
+    text-align: center;
+    font-size: 3.5vw;
+    letter-spacing: .2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 3px rgb(255, 255, 255);
+}
+
+
+/*Suppression du soulignement du lien de redirection "Passer la commande!" vers le form d'inscription
+ou de connection*/
+a:hover{
+    text-decoration: none;
+}
+
+
+/*Propriété du cadre affichage dynamique de nombre de plats du jour dispo*/
+#nbDispo{
+    width: 60%;
+    height: 80px;
+    background: #93b024;
+    margin: auto;
+    border-radius: 2px;
+    display: flex;
+}
+
+/*Propriété texte affichage dynamique de nombre de plats du jour dispo*/
+#nbDispo-Tel{
+    color: #f7f8f4;
+    margin: auto;
+    text-align: center;
+    font-size: 3.8vw;
+    letter-spacing: .2rem;
+    font-weight: bold;
+}
+
+.parentPhoto{
+    width: 97%;
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+   
+} 
+
+.cadrePhoto1, .cadrePhoto2, .cadrePhoto3{
+    /* display: inline-block; */
+    vertical-align: middle;
+    height: 125px;
+    margin-top:60%;
+   
+   
+    
+}
+
+/*No COMMENT PFFFFF*/
+.palmier{
+    background-size: cover;
+    max-width: 84%;
+    height: 77%;
+    margin: 10%;
+    border-radius: 2px;
+}
+
+ .craie {
+    padding-top: 2%;  
+    text-align: center;
+    font-size: 1.8em;
+    color:white;
+}
+
+footer{
+    display: flex;
+    background:#93b024;
+    width: 100%;
+    height: 250px;
+}
+
+.social{
+    width: 20%;
+    margin: 2%;
+}
+
+#iconSocial{
+    width: 53px;
+    margin:7%;
+}
+
+.adresse, .reserve{
+    width: 30%;
+    margin: 2%;
+}
+
+#adresse{
+    color: black;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#reserve{
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+/*formulaire d'inscription */ 
+label {
+	display: block;
+    width: 100px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.btn-success{
+    margin: 5%;
+    background:#93b024;
+}
+
+.reservation{
+    width: 60%;
+    overflow: auto;
+    display: flex;
+    bottom: 0;
+    margin:auto;
+}
+
+#boutonCommande{
+    width: 30%;
+    font-size: 2.5vw;
+    margin:2%;
+    margin-left:5%;
+}
+.test, .table {
+    color: white;
+}
+
+#reservation{
+    width: auto;
+    height: auto;
+    font-size: 1.6em;
+    background:#93b024;
+    color: white;
+    border-radius: 3px;
+}
+
+@import "compass/css3";
+
+.alert-success{
+    margin: 0%;
+    text-align: center;
+    font-size: 1.5em;
+    background-color: #93b024;
+}
+
+.alert-danger{
+    margin: 0%;
+    text-align: center;
+    font-size: 1.5em;
+    background-color: #ee1414;
+}
+
+.link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1.5px;
+    background: #93b024;
+    transition: width .2s;
+}
+
+.link:hover::after {
+    width: 100%;
+    transition: width .3s;
+}
+
+.table td, .table th{
+    vertical-align: middle;
+}
+
+
+@media (max-width: 540px) {
+    
+  
+    /* .parentPhoto{
+        width: 95%;
+        display: inline-block;
+        height: 70%;
+        vertical-align: middle;
+        overflow: hidden;
+    
+    }  */
+
+    h3,h1{
+        color: white;
+        text-align: center;
+        margin-top: 3%;
+        font-size: 40px;
+      
+    }
+
+    .cadrePhoto1, .cadrePhoto2, .cadrePhoto3{
+        display: inline-block;
+        vertical-align: middle;
+        width: 60%;
+        height: 125px;
+        margin-top:10%;
+        margin-bottom: 10%;
+        margin-left: 5%;
+        overflow: hidden;
+    
+        
+    }
+
+    #nbDispo{
+        width: 44%;
+        height: 80px;
+        background: #93b024;
+        margin: auto;
+        border-radius: 2px;
+        display: flex;
+    }
+    
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width">
+        <title>{% block title %}Les Jardins du cloître{% endblock %}</title>
+        {% block stylesheets %}
+        {#CDN Bootstrap, Boostwatch#}
+        <link rel="stylesheet" href="https://bootswatch.com/4/sandstone/bootstrap.min.css">
+        {#link feuille de style#}
+        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/font.css">
+        <link rel="icon" href="/img/logo.ico">
+        {% endblock %}
+    </head>
+    <body>
+          
+        {#Container-fluid parent pour contenir la balise img en classe img-fluid pour une photo responsive en permanence#}    
+        <div class="container-fluid" style="width: 100%; height:450px;">
+                <img class="img-fluid" src="/img/photoNav.JPG" style="width: 100%; height:100%;">
+                </img>
+        </div>
+            
+{#Nav barre de menu responsive bootswatch#}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand"
+       href="{{path('menu')}}">
+       Les Jardins Du Cloître</a>
+
+    {#bouton de menu en mode responsive#}
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarColor01"
+        aria-controls="navbarColor01"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link link" href="/">Accueil<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link" href="https://lesjardinsducloitredemars.fr/">Notre Site</a>
+            </li>
+            {% if not app.user %}
+                <li class="nav-item">
+                    <a class="nav-link link" href="{{path('main_login')}}">Connexion</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link link" href="/logout">Déconnexion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link" href="/compte">Mon compte</a>
+                </li>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <li class="nav-item">
+                    <a class="nav-link link" href="/admin">
+                        Espace administrateur
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link" href="/newsletter">
+                        Newsletter
+                    </a>
+                </li>
+
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+
+                  <div class="container-fluid">
+            
+                     {# display any flash message #}    
+                      {% for label, messages in app.flashes %}
+                      {% for message in messages %}
+                          <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+                              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              {{ message }}
+                          </div>
+                      {% endfor %}
+                    {% endfor %}
+
+                   <div class="row">
+                      <div class="cadre-form col-sm-3 col-s-12">
+                      {% block block1 %}{% endblock %}
+                      </div>
+                      <div class="cadre-form col-sm-6 col-s-12">
+                          {% block block2 %}{% endblock %}
+                      </div>
+                      <div class="cadre-form col-sm-3 col-s-12">
+                          {% block block3 %}{% endblock %}
+                      </div>
+                    </div>
+                    <div class="cadre-form col-sm-12">
+                      {% block block5 %}{% endblock %}
+                    </div>
+                  </div>
+
+                  
+                  {#Pied de page responsive#}
+                  <footer class="contenair-fluid">
+                      <div class="social">
+                          <a  href="https://www.facebook.com/lesjardinsducloitredemars/"><img  id="iconSocial"src="../icon/facebook.svg" alt="facebook">
+                          </a>
+                          <a  href="https://www.instagram.com/les_jardins_du_cloitre_de_mars/?hl=fr"><img id="iconSocial" src="../icon/instagram.svg" alt="instagram">
+                          </a>
+                      </div>
+
+                      <div class="adresse">
+                         <p id="adresse">Les jardins du cloître<br>
+                            20 Boulevard Madeleine<br>
+                            Rémusat<br>
+                            13013Marseille
+                        </p>
+                      </div>
+                      
+                      <div class="reserve">
+                        <p id="reserve">
+                          Réservation du lundi au vendredi<br>
+                          <a id="reserve"href="tel:0491122942">0491122942</a> de 12H à 14H<br>
+                          Ouvert le soir pour soiréés privées et évènements
+                        </p>
+                      </div>
+                     
+
+                  </footer>
+
+
+        
+                 
+        
+        {% block javascripts %}
+        <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
+        <script src="https://bootswatch.com/_vendor/popper.js/dist/umd/popper.min.js"></script>
+        <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/autoClose.js"></script>
+        {% endblock %}
+       
+
+    </body>
+</html>

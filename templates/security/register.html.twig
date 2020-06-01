@@ -1,0 +1,17 @@
+
+
+ <h1>Inscription</h1> 
+
+ {{ form_start(form) }}
+ {{ form_row(form.name, {'label': 'Nom'}) }}
+ {{ form_row(form.lastName, {'label': 'Prenom'}) }}
+ {{ form_row(form.phone, {'label': 'Tel :', 'attr' : 
+ {'placeholder': '0637742312'}}) }}
+ {{ form_row(form.mail, {'label': 'Adresse mail'}) }}
+ {{ form_row(form.password, {'label': 'Mot de passe'}) }}
+ {{ form_row(form.confirmPassword, {'label': 'Confirmer mot de passe'}) }}
+ {{ form_row(form.newsletter, {'label': 'Cochez pour vous abonnez a la newsletter'})}}
+ <button type="submit" class="btn btn-success">Inscription</button>
+ {{ form_end(form) }}
+
+ 

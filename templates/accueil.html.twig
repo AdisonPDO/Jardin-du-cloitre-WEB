@@ -1,0 +1,73 @@
+{#container Parent fluid responsive#}
+<div class="container-fluid">
+        
+        {#Bloc d'affichage form inscription, connection, #}  
+
+        <div id="cadre-form">
+            {% block formMultiAffichage %}
+             
+            {# faire un nouveau template ou l'on creer le form et on l'insert en include entre le bloc actuel #}
+
+{% if not app.user %}
+{% if path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) is same as('/')  %}
+               
+             {{ render(controller(
+        'App\\Controller\\SecurityController::registration',
+        {'request': request}
+    )) }}
+{% endif %}
+
+{% if path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) is same as('/forgottenPassword')  %}
+               
+             {{ render(controller(
+        'App\\Controller\\SecurityController::forgottenPassword',
+        {'request': request}
+    )) }}
+{% endif %}
+ {# {% if path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) is same as('/login')  %} 
+ {{ render(controller('App\\Controller\\SecurityController::login', {'request': request} ))}}  
+ {% endif %}   #}
+{% endif %}
+
+     
+{% endblock %}
+
+
+ 
+
+        </div>
+
+              {#Bloc d'affichage du menu du jour et de la gestion du compte user#}
+              <div id="cadre-menu">
+                  {% block formMultiAffichageMenu %}
+                  {% include ('menu.html.twig') %}
+                  {% if true %}
+
+                  {{ render(controller(
+                      'App\\Controller\\ApliController::reserv',
+                      {'request' : request}
+                      )) 
+                  }}
+                  {% endif %}
+                  {% endblock %}
+                  
+              </div>
+       
+             
+       
+        {#Bloc Plats Dispo et PhotoDeco mode ecran large#}
+        <div id="cadre-platdispoEtPhoto">
+           
+                <h3>
+                Nombre de plats Disponibles!
+                </h3>
+           <div id="nbDispo">
+             {#Affichage dinamyque du nombre de plats dispo#}
+             {% block platsDispo %}70
+             {% endblock %}
+           
+            </div> 
+           <img class="palmier" src="/img/cloitre.jpg">
+          </img>
+        </div>
+      </div>

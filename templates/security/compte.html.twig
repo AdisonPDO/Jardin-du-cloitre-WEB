@@ -1,0 +1,48 @@
+
+{% extends 'base.html.twig' %} 
+{% block block2 %}
+
+<h2> Mon compte  </h2> <br> 
+<form method='POST'> 
+
+<label for="name">Prénom</label>
+<input readonly type="text"  name="name" placeholder="{{ app.user.username }}"> 
+
+<label for="lastName">Nom</label>
+<input readonly type="text" name="lastName" placeholder="{{ app.user.lastName }}">
+
+<label for="newPhone">Numero</label>
+<input type="number" name="newPhone" placeholder="{{ app.user.phone }}" minlength="10" maxlength="10" >
+
+<label for="newMail">Mail</label>
+<input type="email" name="newMail" placeholder="{{ app.user.mail }}">
+
+<label for="password"> Mot de passe actuel </label>
+<input type="password" name="password" >
+
+<label for="newPassword"> Nouveau mot de passe </label>
+<input type="password" name="newPassword" minlength="6">
+
+<label for="newConfirm"> Confirmation mot de passe </label>
+<input type="password" name="newConfirm" minlength="6"><br>
+
+
+
+
+
+<button class="btn btn-lg btn-success" type="submit"> Modifier </button>
+        
+   
+</form>
+<form method="POST">
+
+
+        <label for="confirmDelete"> Entrez votre mot de passe pour pouvoir supprimer votre compte </label>
+        <input type="password" name="confirmDelete">
+        
+        <button class="btn btn-lg btn-danger" type="submit"> Supprimer mon compte </button> 
+        
+        
+        </form>
+
+{% endblock %}
